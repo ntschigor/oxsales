@@ -33,6 +33,9 @@ td.listfilter{
                     <div class="r1"><div class="b1">[{ oxmultilang ident="ORDER_SALES_ORDER_LASTMONTH" }]</div></div>
                 </td>
                 <td class="listfilter" height="5">
+                    <div class="r1"><div class="b1">[{ oxmultilang ident="ORDER_SALES_ORDER_NLLASTMONTH" }]</div></div>
+                </td>
+                <td class="listfilter" height="5">
                     <div class="r1"><div class="b1">[{ oxmultilang ident="ORDER_SALES_ORDER_YEAR" }]</div></div>
                 </td>
                 <td class="listfilter" height="5">
@@ -47,6 +50,7 @@ td.listfilter{
                 <td class="listitem">&nbsp;<b>[{ $ordersum_lastweek }]</b> [{ $currency->name}]</td>
                 <td class="listitem">&nbsp;<b>[{ $ordersum_month }]</b> [{ $currency->name}]</td>
                 <td class="listitem">&nbsp;<b>[{ $ordersum_lastmonth }]</b> [{ $currency->name}]</td>
+                <td class="listitem">&nbsp;<b>[{ $ordersum_nllastmonth }]</b> [{ $currency->name}]</td>
                 <td class="listitem">&nbsp;<b>[{ $ordersum_year }]</b> [{ $currency->name}]</td>
                 <td class="listitem">&nbsp;<b>[{ $ordertotalsum }]</b> [{ $currency->name}]</td>
             </tr>
@@ -58,6 +62,7 @@ td.listfilter{
                 <td class="listitem2">&nbsp;<b>[{ $ordercnt_lastweek }]</b></td>
                 <td class="listitem2">&nbsp;<b>[{ $ordercnt_month }]</b></td>
                 <td class="listitem2">&nbsp;<b>[{ $ordercnt_lastmonth }]</b></td>
+                <td class="listitem2">&nbsp;<b>[{ $ordercnt_nllastmonth }]</b></td>
                 <td class="listitem2">&nbsp;<b>[{ $ordercnt_year }]</b></td>
                 <td class="listitem2">&nbsp;<b>[{ $ordertotalcnt }]</b></td>
             </tr>

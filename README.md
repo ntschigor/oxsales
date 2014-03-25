@@ -5,7 +5,7 @@ How to install
 --------------
 1.    Place the whole module in your shop in:
 
-          modules/te/
+          modules/te/sales/
  
 2.    Copy file "vendormetadata.php" from /modules/te/setup/ to
 
@@ -23,13 +23,14 @@ Go to "Administer Orders" -> "Sales"
 Features
 --------
 
-In the standard OXID backed the sales values ??are all for today and total. This small module reads the sales figures for 
+In the standard Oxid backend the sales values are all for today and total. This small module reads the sales figures for 
 - today 
 - yesterday 
 - weekly 
 - Last week 
 - Month 
 - Last month 
+- next to last month 
 - year 
 
 Cancellations will be considered. 

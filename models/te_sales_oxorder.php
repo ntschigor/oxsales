@@ -32,7 +32,7 @@ class te_sales_oxorder extends te_sales_oxorder_parent
         switch ($sPeriod)
         {
             case "yesterday" :
-                $sSelect .= " AND  oxorderdate = SUBDATE(CURDATE(),1)";
+                $sSelect .= " AND  oxorderdate LIKE '".date("Y-m-d", strtotime("yesterday"))."%'";
             break;
             
             case "week" :
@@ -40,7 +40,7 @@ class te_sales_oxorder extends te_sales_oxorder_parent
             break;
             
             case "lastweek" :
-                $sSelect .= " AND WEEK( oxorderdate ) = WEEK( subdate( now( ) , INTERVAL 1 WEEK ) ) AND YEAR( oxorderdate) = year( subdate( now( ) , INTERVAL 1 WEEK ) )";
+                $sSelect .= " AND WEEK( oxorderdate ) = WEEK( subdate( CURDATE( ) , INTERVAL 1 WEEK ) ) AND YEAR( oxorderdate) = year( subdate( CURDATE( ) , INTERVAL 1 WEEK ) )";
             break;
             
             case "month" :
@@ -48,7 +48,11 @@ class te_sales_oxorder extends te_sales_oxorder_parent
             break;
             
             case "lastmonth" :
-                $sSelect .= " AND MONTH( oxorderdate ) = MONTH( subdate( now( ) , INTERVAL 1 MONTH ) ) AND YEAR( oxorderdate) = year( subdate( now( ) , INTERVAL 1 MONTH ) )";
+                $sSelect .= " AND MONTH( oxorderdate ) = MONTH( subdate( CURDATE( ) , INTERVAL 1 MONTH ) ) AND YEAR( oxorderdate) = year( subdate( CURDATE( ) , INTERVAL 1 MONTH ) )";
+            break;
+            
+            case "nllastmonth" :
+                $sSelect .= " AND MONTH( oxorderdate ) = MONTH( subdate( CURDATE( ) , INTERVAL 2 MONTH ) ) AND YEAR( oxorderdate) = year( subdate( CURDATE( ) , INTERVAL 2 MONTH ) )";
             break;
             
             case "year" :
@@ -66,13 +70,44 @@ class te_sales_oxorder extends te_sales_oxorder_parent
      *
      * @return int
      */
-    public function getOrderCnt( $blToday = false )
+    public function getOrderCnt( $blToday = false, $sPeriod = null )
     {
         $sSelect  = 'select count(*) from oxorder where ';
         $sSelect .= 'oxshopid = "'.$this->getConfig()->getShopId().'"  and oxorder.oxstorno != "1" ';
 
         if ( $blToday ) {
             $sSelect .= 'and oxorderdate like "'.date( 'Y-m-d').'%" ';
+        }
+        switch ($sPeriod)
+        {
+            case "yesterday" :
+                $sSelect .= " AND  oxorderdate LIKE '".date("Y-m-d", strtotime("yesterday"))."%'";
+            break;
+            
+            case "week" :
+                $sSelect .= " AND WEEK (oxorderdate) = WEEK( current_date ) AND YEAR( oxorderdate) = YEAR( current_date )";
+            break;
+            
+            case "lastweek" :
+                $sSelect .= " AND WEEK( oxorderdate ) = WEEK( subdate( CURDATE( ) , INTERVAL 1 WEEK ) ) AND YEAR( oxorderdate) = year( subdate( CURDATE( ) , INTERVAL 1 WEEK ) )";
+            break;
+            
+            case "month" :
+                $sSelect .= " AND MONTH (oxorderdate) = MONTH( current_date ) AND YEAR( oxorderdate) = YEAR( current_date )";
+            break;
+            
+            case "lastmonth" :
+                $sSelect .= " AND MONTH( oxorderdate ) = MONTH( subdate( CURDATE( ) , INTERVAL 1 MONTH ) ) AND YEAR( oxorderdate) = year( subdate( CURDATE( ) , INTERVAL 1 MONTH ) )";
+            break;
+            
+            case "nllastmonth" :
+                $sSelect .= " AND MONTH( oxorderdate ) = MONTH( subdate( CURDATE( ) , INTERVAL 2 MONTH ) ) AND YEAR( oxorderdate) = year( subdate( CURDATE( ) , INTERVAL 2 MONTH ) )";
+            break;
+            
+            case "year" :
+                $sSelect .= " AND YEAR( oxorderdate) = YEAR( current_date )";
+            break;
+            
         }
 
         return ( int ) oxDb::getDb()->getOne( $sSelect, false, false );

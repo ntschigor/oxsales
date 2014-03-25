@@ -25,6 +25,7 @@ $aLang = array(
     'ORDER_SALES_ORDER_LASTWEEK'         => 'last week',
     'ORDER_SALES_ORDER_MONTH'            => 'month',
     'ORDER_SALES_ORDER_LASTMONTH'        => 'last month',
+    'ORDER_SALES_ORDER_NLLASTMONTH'      => 'next to last month',
     'ORDER_SALES_ORDER_YEAR'             => 'year',
     'ORDER_SALES_ORDER_TOTAL'            => 'total',
     'ORDER_SALES_ORDER_SUM'              => 'sum',

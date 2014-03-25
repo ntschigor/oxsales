@@ -61,6 +61,10 @@ class te_sales extends oxAdminView
         $this->_aViewData["ordersum_lastmonth"] = $oLang->formatCurrency($dSum, $oCur);
         $this->_aViewData["ordercnt_lastmonth"] = $oOrder->getOrderCnt(false, "lastmonth");
         
+        $dSum  = $oOrder->getOrderSum(false, "nllastmonth");
+        $this->_aViewData["ordersum_nllastmonth"] = $oLang->formatCurrency($dSum, $oCur);
+        $this->_aViewData["ordercnt_nllastmonth"] = $oOrder->getOrderCnt(false, "nllastmonth");
+        
         $dSum  = $oOrder->getOrderSum(false, "year");
         $this->_aViewData["ordersum_year"] = $oLang->formatCurrency($dSum, $oCur);
         $this->_aViewData["ordercnt_year"] = $oOrder->getOrderCnt(false, "year");

@@ -5,7 +5,7 @@ How to install
 --------------
 1.    Modul in das Shopverzeichnis kopieren (FTP / SFTP):
 
-          modules/te/
+          modules/te/sales/
           
 2.    Kopieren Sie die Datei "vendormetadata.php" aus /modules/te/setup/ nach
 
@@ -25,13 +25,14 @@ Gehen Sie unter "Bestellungen verwalten" -> "Umsatz"
 Features
 --------
 
-Im Standard Oxid Backed lassen sich die Umsatzwerte nur für heute und Total auslesen. Dieses kleine Modul liest die Umsatzzahlen für
+Im Standard Oxid Backend lassen sich die Umsatzwerte nur für heute und Total auslesen. Dieses kleine Modul liest die Umsatzzahlen für
 - heute
 - gestern
 - Woche
 - letzte Woche
 - Monat
 - letzter Monat
+- vorletzter Monat
 - Jahr 
 
 aus. Stornos werden berücksichtigt.
