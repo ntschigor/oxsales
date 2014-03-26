@@ -1,9 +1,9 @@
 <?php
 /**
- * This file is part of a techlines.de project
+ *    This file is part of Module for OXID eShop CE/PE/EE.
  *
- * It is not Open Source and may not be redistributed.
- * For contact information please visit http://www.techlines.de
+ *    Ofree software: you can redistribute it and/or modify
+ *    it under the terms of the MIT License.
  *
  * Version:    1.0
  * Author:     Noel Tschigor
