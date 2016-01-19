@@ -42,8 +42,8 @@ Die Ausgabe erfolgt auf einer separaten Seite im Oxid-Backend
 
 Notice
 ------------
-Getestet in OXID CE 4.8.x eShop
-Für Oxid CE / PE ab 4.7.x
+Getestet in OXID CE 4.9.x eShop
+Für Oxid CE / PE ab 4.9.x
 
 
 Version
