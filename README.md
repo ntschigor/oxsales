@@ -40,8 +40,8 @@ The output is displayed on a separate page in the oxide backend
 
 Notice
 ------------
-Tested only with OXID CE 4.8.x eShop
-for Oxid CE / PE ab 4.7.x
+Tested only with OXID CE 4.9.x eShop
+for Oxid CE / PE ab 4.9.x
 
 
 Version
